@@ -1,3 +1,7 @@
 from flask import Blueprint
 
-views = Blueprint('auth', __name__)
+auth = Blueprint('auth', __name__)
+
+@auth.route('/')
+def home():
+    return "<h1>Test</h1>"
