@@ -25,6 +25,13 @@
 
   <body>
 
+    <nav class=""navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data_target="#navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
     <!-- -- Predefined JS -->
     <script
     src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -42,6 +49,7 @@
     crossorigin="anonymous"
   ></script>
 
+  #use this to import your JS
   <script
     type="text/javascript"
     src="{{ url_for('static', filename='index.js') }}"
