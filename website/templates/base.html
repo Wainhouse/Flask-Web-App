@@ -19,19 +19,29 @@
 
     <title>{% block title %}Home{% endblock %}</title>
   </head>
-
-
-
-
   <body>
-
-    <nav class=""navbar navbar-expand-lg navbar-dark bg-dark">
-
-        <button class="navbar-toggle" type="button" data-toggle="collapse" data_target="#navbar">
+    <!-- #nav bar py -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+       <!-- -- Left most button -->
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar">
+            <!-- Icon we want to use for button -->
             <span class="navbar-toggler-icon"></span>
         </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                <div class="navbar-nav">
+                    <!-- # buttons for navbar -->
+                    <a class="nav-item nav-link" id="home" href="/">Home</a>
+                    <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+                    <a class="nav-item nav-link" id="login" href="/login">Login</a>
+                    <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
+                </div>
+            </div> 
     </nav>
+    <div class="container">
+      {% block content%}
+      {%}
 
+    </div>
     <!-- -- Predefined JS -->
     <script
     src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -49,17 +59,17 @@
     crossorigin="anonymous"
   ></script>
 
-  #use this to import your JS
+  <!-- #use this to import your JS -->
   <script
     type="text/javascript"
     src="{{ url_for('static', filename='index.js') }}"
   ></script>
 
   <!-- # Reference image/JS/CSS from the static folder. -->
-  <script>
+  <script
     type="text/javascript"
-    src="{{ url_for('static', filesname='index.js') }}"
+    src="{{ url_for('static', filename='index.js') }}"
+  ></script>
 
-  </script>
   </body>
   </html>
