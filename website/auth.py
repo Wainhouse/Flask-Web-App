@@ -1,11 +1,12 @@
-from flask import Blueprint
+from xmlrpc.client import boolean
+from flask import Blueprint, render_template
 
 auth = Blueprint('auth', __name__)
 
 # each page/url this app will use
 @auth.route('/login')
 def login():
-    return "<p>Login</p>"
+    return render_template("login.html", boolean = True)
 
 @auth.route('/logout')
 def logout():
@@ -13,6 +14,6 @@ def logout():
 
 @auth.route('/sign-up')
 def sign_up():
-    return "<p>sign-up</p>"
+    return render_template("sign_up.html")
 
 
