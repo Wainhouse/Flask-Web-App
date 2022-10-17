@@ -23,6 +23,7 @@ def create_app():
     app.register_blueprint(auth, url_prefix='/')
 
     from .models import User, Note
+    from . import models
 
     with app.app_context():
         db.create_all()
